@@ -8,8 +8,34 @@
 
 <body>
 
+  <h1>Cookie</h1>
+  <form>
+    <label for="nome">Informe o seu nome:</label>
+    <input type="text" name="nome" id="nome">
+    <button id="btnEnviar">Enviar</button>
+  </form>
 
   <script src="./app.js"></script>
+  <script>
+    document.getElementById('btnEnviar').addEventListener('click', function (event) {
+      event.preventDefault();
+      let nome = document.getElementById('nome').value;
+      document.cookie = `nome=${nome}`;
+      document.cookie = "escola=proz";
+      console.log(document.cookie);
+
+      const cookie = document.cookie;
+      const arrCookie = cookie.split(';');
+
+      for (let i = 0; i < arrCookie.length; i++) {
+        const element = arrCookie[i].split('=');
+
+        if (element[0].trim() === 'nome') {
+          console.log(`Olá ${element[1]}`)
+        }
+      }
+    })
+  </script>
 
 </body>
 

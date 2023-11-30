@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Incial</title>
+</head>
+
+<body>
+  <p id="mensagem"></p>
+
+  <script>
+    const cookie = document.cookie;
+    const arrCookie = cookie.split(';');
+
+    for (let i = 0; i < arrCookie.length; i++) {
+      const element = arrCookie[i].split('=');
+
+      if (element[0].trim() == 'nome') {
+        document.getElementById('mensagem').innerText = `Olá ${element[1]}`;
+      }
+    }
+  </script>
+</body>
+
+</html>
