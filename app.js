@@ -42,3 +42,10 @@ let cadastro = [
   { nome: "Isabela", idade: 24, cidade: "Belo Horizonte" },
   { nome: "Rodrigo", idade: 30, cidade: "São Paulo" },
 ];
+
+// Exibir apenas o nome das pessoas que residem na cidade de São Paulo
+for (let i = 0; i < cadastro.length; i++) {
+  if (cadastro[i].cidade == "São Paulo") {
+    console.log(`Nome: ${cadastro[i].nome}, Cidade: ${cadastro[i].cidade}`);
+  }
+}
